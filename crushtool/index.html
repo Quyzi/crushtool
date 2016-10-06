@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `crushtool` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, crushtool">
+
+    <title>crushtool - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'crushtool', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>crushtool</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/crushtool/src/lib.rs.html#1-309' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Decompile a ceph crushmap for fun and profit</p>
+
+<p>CRUSH is a pseudo-random data distribution algorithm that
+efficiently distributes input values (typically, data objects)
+across a heterogeneous, structured storage cluster.</p>
+
+<p>The algorithm was originally described in detail in this paper
+(although the algorithm has evolved somewhat since then):
+<a href="http://www.ssrc.ucsc.edu/Papers/weil-sc06.pdf">http://www.ssrc.ucsc.edu/Papers/weil-sc06.pdf</a></p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Bucket.html'
+                                  title='crushtool::Bucket'>Bucket</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushBucketList.html'
+                                  title='crushtool::CrushBucketList'>CrushBucketList</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushBucketStraw.html'
+                                  title='crushtool::CrushBucketStraw'>CrushBucketStraw</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushBucketStraw2.html'
+                                  title='crushtool::CrushBucketStraw2'>CrushBucketStraw2</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushBucketTree.html'
+                                  title='crushtool::CrushBucketTree'>CrushBucketTree</a></td>
+                           <td class='docblock short'>
+                                <p>CrushBucketTree is generally not used in Ceph because the
+algorithm is buggy.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushBucketUniform.html'
+                                  title='crushtool::CrushBucketUniform'>CrushBucketUniform</a></td>
+                           <td class='docblock short'>
+                                <p>All items are equally weighted.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushMap.html'
+                                  title='crushtool::CrushMap'>CrushMap</a></td>
+                           <td class='docblock short'>
+                                <p>CrushMap includes all buckets, rules, etc.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushRuleMask.html'
+                                  title='crushtool::CrushRuleMask'>CrushRuleMask</a></td>
+                           <td class='docblock short'>
+                                <p>The rule mask is used to describe what the rule is intended for.
+Given a ruleset and size of output set, we search through the
+rule list for a matching rule_mask.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.CrushRuleStep.html'
+                                  title='crushtool::CrushRuleStep'>CrushRuleStep</a></td>
+                           <td class='docblock short'>
+                                <p>CRUSH uses user-defined &quot;rules&quot; to describe how inputs should be
+mapped to devices.  A rule consists of sequence of steps to perform
+to generate the set of output devices.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Rule.html'
+                                  title='crushtool::Rule'>Rule</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.BucketAlg.html'
+                                  title='crushtool::BucketAlg'>BucketAlg</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.BucketTypes.html'
+                                  title='crushtool::BucketTypes'>BucketTypes</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.CrushHash.html'
+                                  title='crushtool::CrushHash'>CrushHash</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.EncodingError.html'
+                                  title='crushtool::EncodingError'>EncodingError</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.OpCode.html'
+                                  title='crushtool::OpCode'>OpCode</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.RuleType.html'
+                                  title='crushtool::RuleType'>RuleType</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.decode_crushmap.html'
+                                  title='crushtool::decode_crushmap'>decode_crushmap</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.encode_crushmap.html'
+                                  title='crushtool::encode_crushmap'>encode_crushmap</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_tunables_argonaut.html'
+                                  title='crushtool::set_tunables_argonaut'>set_tunables_argonaut</a></td>
+                           <td class='docblock short'>
+                                <p>Set the crush tunables to Argonaut</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_tunables_bobtail.html'
+                                  title='crushtool::set_tunables_bobtail'>set_tunables_bobtail</a></td>
+                           <td class='docblock short'>
+                                <p>Set the crush tunables to Bobtail</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_tunables_firefly.html'
+                                  title='crushtool::set_tunables_firefly'>set_tunables_firefly</a></td>
+                           <td class='docblock short'>
+                                <p>Set the crush tunables to Firefly</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_tunables_hammer.html'
+                                  title='crushtool::set_tunables_hammer'>set_tunables_hammer</a></td>
+                           <td class='docblock short'>
+                                <p>Set the crush tunables to Hammer</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_tunables_jewel.html'
+                                  title='crushtool::set_tunables_jewel'>set_tunables_jewel</a></td>
+                           <td class='docblock short'>
+                                <p>Set the crush tunables to Jewel</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "crushtool";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
